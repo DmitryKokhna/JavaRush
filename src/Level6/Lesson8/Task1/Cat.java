@@ -1,4 +1,4 @@
-package Level6.Lesson8;
+package Level6.Lesson8.Task1;
 // ЗАДАЧА 1
 //Классовый счетчик
 //EASY

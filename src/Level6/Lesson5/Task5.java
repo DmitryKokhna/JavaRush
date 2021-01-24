@@ -1,4 +1,4 @@
-package Level6;
+package Level6.Lesson5;
 // ЗАДАЧА № 5 из 5  - HARD
 
 //Чётные и нечётные циферки

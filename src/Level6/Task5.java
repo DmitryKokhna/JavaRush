@@ -1,4 +1,4 @@
-package JavaRushMy;
+package Level6;
 
 //Чётные и нечётные циферки
 //        Давайте определим, сколько четных цифр, а сколько нечетных в числе, введенном с клавиатуры.
@@ -10,7 +10,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Level5_lect5 {
+public class Task5 {
     public static int even;
     public static int odd;
 

@@ -37,7 +37,7 @@ Body.calculateMassIndex(weight,height);
                                     }
                 else  if (index>=30)
                 {
-                    System.out.println("Ожирение: 30 или более");
+                    System.out.println("Ожирение: 30 или более ");
                 }
             }
     }

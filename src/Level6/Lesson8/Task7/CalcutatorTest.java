@@ -13,7 +13,7 @@ class CalcutatorTest {
     void plus() {
         Calcutator calcutator=new Calcutator();
         int actual=calcutator.plus(2,4);
-        int expected=7;
+        int expected=6;
         assertEquals(expected,actual);
 
     }

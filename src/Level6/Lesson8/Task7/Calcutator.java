@@ -40,6 +40,7 @@ public class Calcutator {
         System.out.println(multyply(8,8));
         System.out.println(devision(70,2));
         System.out.println(percent(70,50));
+        // second_br
     }
 
 }

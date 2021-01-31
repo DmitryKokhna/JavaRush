@@ -39,7 +39,7 @@ public class Calcutator {
         System.out.println("Разность чисел равна: " +plus(3,14));
         System.out.println("Умноженее чисел равно: " +multyply(8,8));
         System.out.println("Деление чисел равно: " +devision(70,2));
-        System.out.println("Процент от чисела А составляетf: " +percent(70,50));
+        System.out.println("Процент от чисела А составляет: " +percent(70,50));
     }
 
 }

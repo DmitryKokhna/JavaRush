@@ -35,11 +35,11 @@ public class Calcutator {
       }
 
     public static void main(String[] args) {
-        System.out.println(minus(5,7));
-        System.out.println(plus(3,14));
-        System.out.println(multyply(8,8));
-        System.out.println(devision(70,2));
-        System.out.println(percent(70,50));
+        System.out.println("Cумма чисел равна: " + minus(5,7));
+        System.out.println("Разность чисел равна: " +plus(3,14));
+        System.out.println("Умноженее чисел равно: " +multyply(8,8));
+        System.out.println("Деление чисел равно: " +devision(70,2));
+        System.out.println("Процент от чисела А составляет: " +percent(70,50));
         // second_br
     }
 

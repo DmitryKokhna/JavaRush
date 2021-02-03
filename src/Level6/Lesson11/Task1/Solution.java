@@ -13,6 +13,13 @@ package Level6.Lesson11.Task1;
 // Создать 10 объектов Cat и вывести значение переменной catCount на экран.
 
 public class Solution {
+    public static class Cat {
+        public static int catCount;
+
+        public Cat() {
+            catCount++; // тут увеличиваем счетчик, при  создании объектов от класса Кот
+        }
+    }
     public static void main(String[] args) {
         // тут создаем 10 объектов от класса Кот
         Cat ca1=new Cat();
@@ -29,12 +36,5 @@ public class Solution {
         System.out.println(Cat.catCount); // тут просто проверяем, что конструктор работает - по заданию не требуется
     }
 
-    public static class Cat {
-        public static int catCount;
-        public Cat()
-        {
-            catCount++; // тут увеличиваем счетчик, при  создании объектов от класса Кот
-        }
+      }
 
-    }
-}

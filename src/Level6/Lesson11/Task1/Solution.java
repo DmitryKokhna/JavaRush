@@ -31,7 +31,7 @@ public class Solution {
         Cat ca7=new Cat();
         Cat ca8=new Cat();
         Cat ca9=new Cat();
-        Cat ca10=new Cat();
+        Cat ca10 =new Cat();
 
         System.out.println(Cat.catCount); // тут просто проверяем, что конструктор работает - по заданию не требуется
     }

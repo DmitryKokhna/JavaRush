@@ -47,7 +47,45 @@ package Level6.Lesson11.Task9;
         Строка про сына (пятая) должна соответствовать условию.
         Строка про дочь (шестая) должна соответствовать условию.
         */
+/* ublic class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String motherName= reader.readLine();
 
+        Cat catMother =new Cat(motherName);
+
+        String daughterName= reader.readLine();
+
+        Cat catDaughter=new Cat(daughterName,catMother);
+
+        System.out.println(catMother);
+        System.out.println(catDaughter);
+    }
+
+
+    public static class Cat{
+        private String name;
+        private Cat parent;
+
+        Cat(String name){
+            this.name=name;
+        }
+
+        public Cat(String name, Cat parent) {
+            this.name = name;
+            this.parent = parent;
+        }
+
+        @Override
+        public String toString() {
+         if (parent == null){
+             return "The cat's name is " + name +", no mother";}
+         else{
+             return "The cat's name is " + name + ", mother is " + parent.name;
+        }}
+    }
+}
+*/
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -70,7 +108,8 @@ public class Solution {
 
     public static class Cat{
         private String name;
-        private Cat parent;
+        private Cat mam;
+        private Cat dad;
 
         Cat(String name){
             this.name=name;

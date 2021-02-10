@@ -1,9 +1,8 @@
-package Level7.Lesson4.Task5;
+package Level7.Lesson4.Task1;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
 // ЗАДАЧА 1
 //Массивный максимум
@@ -15,7 +14,7 @@ public class Solution {
         int[] array= initializeArray();
         int max=max (array);
         System.out.println(max);
-        int [] a=new int[];
+
     }
 
 

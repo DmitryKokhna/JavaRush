@@ -1,4 +1,4 @@
-package Level7.Lesson4;
+package Level7.Lesson4.Task4;
 // ЗАДАЧА 4
 //Переверни массив
 //Уровень - EASY

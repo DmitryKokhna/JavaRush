@@ -4,7 +4,6 @@ package Level6.Lesson8.Task7;
 
 import org.junit.jupiter.api.Test;
 
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalcutatorTest {

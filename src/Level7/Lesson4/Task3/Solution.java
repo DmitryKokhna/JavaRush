@@ -21,7 +21,14 @@ public class Solution {
         for(int i=0;i<10;i++){
             arrStr[i]= reader.readLine();
         }
+        for(int j=0; j<10;j++){
+            int lengthSrt= arrStr[j].length();
+            arrInt[j]=lengthSrt;
+        }
 
+        for (int g=0;g<10;g++) {
+            System.out.println(arrInt[g]);
+        }
     }
 
 }

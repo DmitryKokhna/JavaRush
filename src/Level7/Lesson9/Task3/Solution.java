@@ -7,6 +7,8 @@ package Level7.Lesson9.Task3;
 // «мама», «мыла», «раму». После каждого слова вставляем в список строку, содержащую слово «именно».
 // И выводим результат на экран. Каждый элемент списка — с новой строки.
 
+import java.util.ArrayList;
+
 //1. Создай список из слов "мама", "мыла", "раму".
 //        2. После каждого слова вставь в список строку, содержащую слово "именно".
 //        3. Вывести результат на экран, каждый элемент списка с новой строки.
@@ -19,6 +21,17 @@ package Level7.Lesson9.Task3;
 //        Выведи элементы списка на экран, каждый с новой строки.
 public class Solution {
     public static void main(String[] args) {
+        ArrayList<String> arrayList=new ArrayList<String>();
+        arrayList.add("мама");
+        arrayList.add("мыла");
+        arrayList.add("раму");
 
+        arrayList.add(1,"именно");
+        arrayList.add(3,"именно");
+        arrayList.add(5,"именно");
+
+        for (int i=0;i<arrayList.size();i++){
+            System.out.println(arrayList.get(i));
+        }
     }
 }

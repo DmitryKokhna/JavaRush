@@ -25,7 +25,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class Solution {
     public static void main(String[] args) throws IOException {
@@ -37,14 +36,14 @@ public class Solution {
 
         ArrayList<String> result = doubleValues(list);
 
-        for (int i = 0; i<20;i++){   // Это проверка выводя. по заданию не требуется
-            System.out.println(list.get(i));
+        for (int j = 0; j<20;j++){
+            System.out.println(list.get(j));
         }
     }
 
     public static ArrayList<String> doubleValues(ArrayList<String> list) {
-        for(int i = 0;i<list.size();i += 2){
-            list.add(i+1, list.get(i));
+        for(int k = 0;k<list.size();k += 2){
+            list.add(k+1, list.get(k));
         }
         return list;
 

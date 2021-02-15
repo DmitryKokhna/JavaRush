@@ -30,55 +30,48 @@ import java.util.ArrayList;
 
 public class Solution {
     public static void main(String[] args) throws IOException {
-ArrayList<Integer> commanArr=new ArrayList<>();
+ArrayList<Integer> commonArr=new ArrayList<>();
+
         BufferedReader reader=new BufferedReader(new InputStreamReader(System.in));
 
 for (int k=0;k<10;k++){
-    commanArr.add(Integer.parseInt(reader.readLine()));
-
+    commonArr.add(Integer.parseInt(reader.readLine()));
 }
-printList(commanArr);
-    }
-    public static void printList(ArrayList<Integer> list)
-    {
         ArrayList<Integer> arrayListFor3=new ArrayList<>();
         ArrayList<Integer> arrayListFor2=new ArrayList<>();
         ArrayList<Integer> arrayListOther=new ArrayList<>();
 
-        for(int i=0;i<list.size();i++){
+        for(int i=0;i<commonArr.size();i++){
 
+            if(commonArr.get(i)%3==0)
+            {
+                arrayListFor3.add(commonArr.get(i));
+            }
+            if(commonArr.get(i)%2==0)
+            {
+                arrayListFor2.add(commonArr.get(i));
+            }
+            if((commonArr.get(i)%3!=0)&&(commonArr.get(i)%2!=0))
+            {
+                arrayListOther.add(commonArr.get(i));
+            }
+    }
+    printList(commonArr);
 
-if((list.get(i)%3==0))
-{
-    arrayListFor3.add(list.get(i));
-}
-if(list.get(i)%2==0)
-{
-    arrayListFor2.add(list.get(i));
-}
-if((list.get(i)%3!=0)&&(list.get(i)%2!=0))
-{
-    arrayListOther.add(list.get(i));
-}
-        }
-        System.out.println("Это на 3");
-        System.out.println("---------");
-     for (int j=0;j<arrayListFor3.size();j++)
-     {
-         System.out.println("  " + arrayListFor3.get(j));
-     }
-        System.out.println("----------");
-        System.out.println(" Это на 2");
-        for (int j=0;j<arrayListFor2.size();j++)
-        {
-            System.out.println("  "+ arrayListFor2.get(j));
-        }
-        System.out.println("___________");
-        System.out.println("Это другие");
-        for (int j=0;j<arrayListOther.size();j++)
-        {
-            System.out.println("  "+ arrayListOther.get(j));
-        }
+        printList(arrayListFor3);
+
+        printList(arrayListFor2);
+
+        printList(arrayListOther);
+
 
     }
+    public static void printList(ArrayList<Integer> list)
+    {
+        for (int j=0;j<list.size();j++)
+        {
+            System.out.println(list.get(j));
+        }
+    }
+
 }

@@ -32,8 +32,35 @@ package Level7.Lesson9.Task4;
 //        Метод fix не должен ничего делать со словами, содержащими и букву "л" и букву "р".
 //        Метод fix не должен ничего делать со словами, которые не содержат ни букву "л", ни букву "р".
 
+import java.util.ArrayList;
+
 public class Sulution {
     public static void main(String[] args) {
 
+        ArrayList<String> strings = new ArrayList<>();
+        strings.add("роза");
+        strings.add("лоза");
+        strings.add("лира");
+
+        strings = fix(strings);
+
+
+        for (String string : strings) {
+            System.out.println(string);
+        }
+
+    }
+
+    public static ArrayList<String> fix(ArrayList<String> strings) {
+        for (int i = 0; i < strings.size(); i++) {
+            if (strings.get(i).contains("р") && !strings.get(i).contains("л")) {
+                strings.remove(strings.get(i));
+                i--;
+            } else if (strings.get(i).contains("л") && !strings.get(i).contains("р")) {
+                strings.add(i + 1, strings.get(i));
+                i += 2;
+            }
+        }
+        return strings;
     }
 }

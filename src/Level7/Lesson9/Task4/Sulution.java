@@ -38,28 +38,28 @@ public class Sulution {
     public static void main(String[] args) {
 
         ArrayList<String> strings = new ArrayList<>();
-        strings.add("роза");
+//        strings.add("ров");
+ //       strings.add("рали");
+       strings.add("роза");
         strings.add("лоза");
-        strings.add("лира");
-
+       strings.add("лира");
         strings = fix(strings);
-
 
         for (String string : strings) {
             System.out.println(string);
         }
-
     }
-
     public static ArrayList<String> fix(ArrayList<String> strings) {
         for (int i = 0; i < strings.size(); i++) {
-            if (strings.get(i).contains("р") && !strings.get(i).contains("л")) {
-                strings.remove(strings.get(i));
+            if (strings.get(i).contains("р") && !strings.get(i).contains("л"))
+            {
+                strings.remove(i);
                 i--;
-            } else if (strings.get(i).contains("л") && !strings.get(i).contains("р")) {
+            } else if (strings.get(i).contains("л") && !strings.get(i).contains("р"))
+            {
                 strings.add(i + 1, strings.get(i));
-                i += 2;
-            }
+                i += 1;
+                         }
         }
         return strings;
     }

@@ -46,16 +46,26 @@ public class Solution {
 
         while(true){
             String string = reader.readLine();
-            if(string==null || strings.isEmpty()){
-                break;}
-            else {
-            strings.add(string);}
+            if(string==null || string.isEmpty())
+                break;
+            strings.add(string);
         }
+
         ArrayList<String> resultStrings = new ArrayList<>();
         for(int i=0; i<strings.size();i++){
             String string = strings.get(i);
-            resultStrings.add(string.toLowerCase());
+           int count=string.length();
+           if(count%2==0){
+               resultStrings.add(string);
+
+           }
+           else {
+               resultStrings.add(string);
+               resultStrings.add(string);
+
+           }
         }
+
         for(int i=0; i<resultStrings.size();i++){
             System.out.println(resultStrings.get(i));
         }

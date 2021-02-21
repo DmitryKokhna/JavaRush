@@ -21,7 +21,7 @@ public class Solution {
 
 
     }
-    public static int getValue(){
+    public int getValue(){
         return C;
     }
 }

@@ -56,12 +56,12 @@ public class Solution {
             String string = strings.get(i);
            int count=string.length();
            if(count%2==0){
-               resultStrings.add(string);
+               resultStrings.add(string+" " + string);
 
            }
            else {
-               resultStrings.add(string);
-               resultStrings.add(string);
+               resultStrings.add(string + " " +string +" " + string);
+
 
            }
         }

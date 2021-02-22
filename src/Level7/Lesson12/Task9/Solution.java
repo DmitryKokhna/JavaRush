@@ -57,13 +57,10 @@ public class Solution {
            int count=string.length();
            if(count%2==0){
                resultStrings.add(string+" " + string);
-
            }
            else {
                resultStrings.add(string + " " +string +" " + string);
-
-
-           }
+          }
         }
 
         for(int i=0; i<resultStrings.size();i++){

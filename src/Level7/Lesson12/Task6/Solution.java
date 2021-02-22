@@ -26,6 +26,7 @@ package Level7.Lesson12.Task6;
 //Добавить в класс конструктор public Human(String name, boolean sex, int age, Human father, Human mother).
 //Создай 9 разных объектов типа Human (4 объекта без отца и матери и 5 объектов с ними)).
 //Выведи созданные объекты на экран.
+
 public class Solution {
     public static void main(String[] args) {
 

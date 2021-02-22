@@ -8,7 +8,8 @@ package Level7.Lesson12.Task6;
 // Для тренировки создайте объекты и заполните их данные так, чтобы получилось два дедушки, две бабушки, отец, мать, трое детей.
 // Выведите объекты на экран.
 
-//Создай класс Human с полями имя(String), пол(boolean), возраст(int), отец(Human), мать(Human). Создай объекты и заполни их так, чтобы получилось: Два дедушки, две бабушки, отец, мать, трое детей. Вывести объекты на экран.
+//Создай класс Human с полями имя(String), пол(boolean), возраст(int), отец(Human), мать(Human).
+// Создай объекты и заполни их так, чтобы получилось: Два дедушки, две бабушки, отец, мать, трое детей. Вывести объекты на экран.
 //
 //Примечание:
 //Если написать свой метод String toString() в классе Human, то именно он будет использоваться при выводе объекта на экран.
@@ -37,22 +38,32 @@ public class Solution {
         Human GrandMam2=new Human("Gmam2",false,61);
 
         Human father=new Human("FatherName",true,40,GranDad1,GrandMam1);
-        Human mother=new Human("MotherName",false,30,GranDad2,GrandMam2);
+        Human mother=new Human("MotherName",false,35,GranDad2,GrandMam2);
 
-        Human children1=new Human("Children1",true,20,father,mother);
-        Human children2=new Human("Children2",true,15,father,mother);
-        Human children3=new Human("Children3",false,10,father,mother);
+        Human child1=new Human("Children1",true,15,father,mother);
+        Human child2=new Human("Children2",true,10,father,mother);
+        Human child3=new Human("Children3",false,5,father,mother);
+
+        System.out.println(GranDad1);
+        System.out.println(GrandMam1);
+        System.out.println(GranDad2);
+        System.out.println(GrandMam2);
+        System.out.println(father);
+        System.out.println(mother);
+        System.out.println(child1);
+        System.out.println(child2);
+        System.out.println(child3);
 
 
     }
     public   static class  Human{
         String name;
-        Boolean sex;
+        boolean sex;
         int age;
         Human father;
         Human mother;
 
-        public Human(String name, Boolean sex, int age) {
+        public Human(String name, boolean sex, int age) {
             this.name = name;
             this.sex = sex;
             this.age = age;
@@ -71,7 +82,7 @@ public class Solution {
             String text = "";
             text +="Имя: " + this.name;
             text +=", пол: " + (this.sex ? "мужской" : "женский");
-            text +=", вохраст: " + this.age;
+            text +=", возраст: " + this.age;
 
             if(this.father !=null){
                 text +=", отец: " + this.father.name;

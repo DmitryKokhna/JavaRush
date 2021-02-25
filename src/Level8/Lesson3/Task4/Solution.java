@@ -26,14 +26,11 @@ public class Solution {
 
     }
 
-
     public static void printKeys(Map<String, String > map)
     {
         for ( Map.Entry<String, String> text: map.entrySet()
              ) {
-
             System.out.println(text.getKey());
-
         }
     }
 }

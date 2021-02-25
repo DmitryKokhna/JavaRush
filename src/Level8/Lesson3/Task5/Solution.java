@@ -1,30 +1,25 @@
 package Level8.Lesson3.Task5;
 
+import java.util.HashMap;
+import java.util.Map;
+
 // Задача 5
 // На экране - знечени
 // Уровень - Easy
 // Вывести на экран значения из МАП. Используя мметод.
-import java.util.HashMap;
-import java.util.Map;
-
-//
-//
 public class Solution {
     public static void main(String[] args) {
-        Map<String , Object> map = new HashMap<>();
-        map.put("Sim",5);
-        map.put("Tom", 5.5);
-        map.put("Arbus",false);
-        map.put("Baby",null);
+        Map<String , String> map = new HashMap<>();
+        map.put("Sim1","Sim");
+        map.put("Tom","Tom");
+        map.put("Arbus","Arbus");
+        map.put("Baby","Baby");
         map.put("Cat","Cat");
-        map.put("Eat", new Long(56));
-        map.put("Food",new Character('3'));
-        map.put("Gevey",'6');
-        map.put("Hugs",111111111111L);
-        map.put("Comp",(double) 123);
-
-
-
+        map.put("Dog","Dog");
+        map.put("Eat","Eat");
+        map.put("Food","Food");
+        map.put("Gevey","Gevey");
+        map.put("Hugs1","Hugs");
 
         printKeys(map);
 

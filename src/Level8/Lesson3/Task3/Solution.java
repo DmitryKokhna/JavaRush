@@ -43,7 +43,7 @@ for(int i=0; i< cats.length;i++)
     String str=cats[i];
     catMethod.put(str, new Cat(str));
 }
-
+return catMethod;
     }
 
     public static class Cat{

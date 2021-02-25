@@ -16,7 +16,7 @@ package Level7.Lesson12.Task10;
 //        Метод main должен вызывать метод sort.
 //        Метод sort должен сортировать переданный массив по убыванию
 
-import org.testng.internal.collections.Ints;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;

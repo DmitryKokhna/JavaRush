@@ -19,6 +19,7 @@ package Level8.Lesson3.Task3;
 //Метод addCatsToMap() должен добавлять в коллекцию всех котов из массива String[] cats, согласно условию.
 //Программа должна выводить содержимое коллекции на экран, каждую пару через дефис и с новой строки.
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Solution {
@@ -36,6 +37,12 @@ public class Solution {
 
     public static Map<String, Cat> addCatsToMap(String[] cats)
     {
+Map<String,Cat>  catMethod = new HashMap<>();
+for(int i=0; i< cats.length;i++)
+{
+    String str=cats[i];
+    catMethod.put(str, new Cat(str));
+}
 
     }
 

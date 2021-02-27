@@ -30,33 +30,34 @@ import java.util.List;
 public class Solution {
     public static void main(String[] args) {
 
-        System.out.println(getGetTimeInMs(fill( new ArrayList())));
+        System.out.println(getGetTimeInMs(fill(new ArrayList())));
         System.out.println(getGetTimeInMs(fill(new LinkedList())));
     }
-    public static List fill(List list){
-        for(int i=0;i<10000;i++){
+
+    public static List fill(List list) {
+        for (int i = 0; i < 10000; i++) {
             list.add(new Object());
-                  }
+        }
         return list;
     }
 
-    public static long getGetTimeInMs(List list){
+    public static long getGetTimeInMs(List list) {
         Date startTime = new Date();
-       long startMs = startTime.getTime();
+        long startMs = startTime.getTime();
         get10000(list);
         Date endTime = new Date();
         long endMs = endTime.getTime();
 
-        return (endMs-startMs);
+        return (endMs - startMs);
     }
 
-    public static void get10000(List list){
-        if(list.isEmpty()){
+    public static void get10000(List list) {
+        if (list.isEmpty()) {
             return;
         }
-        int x = list.size()/2;
+        int x = list.size() / 2;
 
-        for(int i=0;i<10000;i++){
+        for (int i = 0; i < 10000; i++) {
             list.get(x);
         }
     }

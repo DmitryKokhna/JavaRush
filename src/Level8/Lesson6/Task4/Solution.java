@@ -23,6 +23,7 @@ package Level8.Lesson6.Task4;
 
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -40,8 +41,13 @@ public class Solution {
     }
 
     public static long getGetTimeInMs(List list){
-
+        Date startTime = new Date();
+       long startMs = startTime.getTime();
         get10000(list);
+        Date endTime = new Date();
+        long endMs = endTime.getTime();
+
+        return (endMs-startMs);
     }
 
     public static void get10000(List list){

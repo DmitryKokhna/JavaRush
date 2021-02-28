@@ -54,7 +54,8 @@ long startMs = startDate.getTime();
 
     public static void insert10000(List list){
         for(int i=0;i<10000;i++){
-            list.add(0,new Object());
+          list.add(0,new Object());
+      //     list.add(new Object());   если вставка в конце, то разницы в быстродействии нет
         }
 
     }

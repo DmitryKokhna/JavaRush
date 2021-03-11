@@ -33,15 +33,27 @@ public class Solution {
         DateFormat dateFormat = new SimpleDateFormat("MMMM d yyyy", Locale.ENGLISH);
         Map<String, Date> map = new HashMap<>();
         map.put("Смирнов",dateFormat.parse("MAY 1 2012"));
+        map.put("Смирнов2",dateFormat.parse("MAY 2 2012"));
+        map.put("Смирнов3",dateFormat.parse("MAY 3 2012"));
+        map.put("Смирнов4",dateFormat.parse("July 1 2012"));
+        map.put("Смирнов5",dateFormat.parse("July 2 2012"));
+        map.put("Смирнов6",dateFormat.parse("June 1 2012"));
+        map.put("Смирнов7",dateFormat.parse("July 2 2012"));
+        map.put("Смирнов8",dateFormat.parse("November 1 2012"));
+        map.put("Смирнов9",dateFormat.parse("November 9 2012"));
 
-        ///код
+        return map;
     }
 
     public static void removeAllSummerPeople(Map<String ,Date> map) {
         //код
     }
 
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws ParseException {
+     //   System.out.println(createMap().toString());
+   //     for (Map.Entry<String,Date> map2 : createMap().entrySet()){
+  //          System.out.println(map2.getKey());
+ //           System.out.println(map2.getValue());
+   //     }
     }
 }

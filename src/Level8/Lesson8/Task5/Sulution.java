@@ -17,17 +17,38 @@ package Level8.Lesson8.Task5;
 //Метод removeTheFirstNameDuplicates() должен удалять из словаря всех людей, имеющие одинаковые имена.
 //Метод removeTheFirstNameDuplicates() должен вызывать метод removeItemFromMapByValue().
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.Collections;
 
 public class Sulution {
     public static Map<String, String> createMap(){
-        //код
+
+        Map<String, String> map = new HashMap<>();
+
+        map.put("a", "1");
+        map.put("b", "2");
+        map.put("c", "3");
+        map.put("d", "4");
+        map.put("e", "1");
+        map.put("f", "5");
+        map.put("g", "6");
+        map.put("h", "2");
+        map.put("j", "7");
+        map.put("k", "8");
+
+        return map;
     }
-    public static void removeTheFirstNameDuplicates(Map<String,String> map){
-        //код
-    }
-    public static void removeItemFromMapByValue(Map<String,String>, String value){
+    public static void removeTheFirstNameDuplicate(Map<String,String> map) {
+        Map<String,String> copy = new HashMap<>(map);
+        for (String value : copy.values()){
+            if(Collections.frequency(copy.values(),value)>1){
+                removeItemFromMapByValue(map,value);
+            }
+        }
+     }
+
+
+    public static void removeItemFromMapByValue(Map<String,String> map, String value){
         Map<String , String> copy = new HashMap<>(map);
         for(Map.Entry<String,String> pair : copy.entrySet()){
             if(pair.getValue().equals(value)){
@@ -37,6 +58,15 @@ public class Sulution {
     }
 
     public static void main(String[] args) {
+Map<String,String>  map=createMap();
+  for (Map.Entry<String,String> entry : map.entrySet()){
+      System.out.println(entry.getKey()+" - "+entry.getValue());
+  }
+        System.out.println("------------");
+removeTheFirstNameDuplicate(map);
+        for (Map.Entry<String,String> entry : map.entrySet()){
+            System.out.println(entry.getKey()+" - "+entry.getValue());
+        }
 
     }
 }

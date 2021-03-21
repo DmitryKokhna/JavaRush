@@ -22,7 +22,6 @@ package Level8.Lesson11.Task8;
 //Метод main() должен вызывать метод sort().
 //Программа должна выводить пять наибольших чисел масси
 
-import org.yaml.snakeyaml.util.ArrayUtils;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

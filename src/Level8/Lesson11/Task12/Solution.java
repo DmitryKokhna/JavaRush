@@ -28,8 +28,9 @@ import java.io.InputStreamReader;
 public class Solution {
     public static void main(String[] args) throws IOException {
 
+
         BufferedReader reader=new BufferedReader(new InputStreamReader(System.in));
-        String[] array=new String[20];
+        String[] array=new String[4];
         for(int i=0;i< array.length;i++){
             array[i]= reader.readLine();
         }
@@ -40,15 +41,27 @@ public class Solution {
         }
     }
 
-    public static void sort(String[] array){
+    public static void sort(String[] array) {
 
-        //код
+        boolean needIteration = true;
+        while (needIteration) {
+            needIteration = false;
+            for (int i = 0; i < array.length-1; i++) {
+                if (isGreaterThan(array[i], array[i+1])) {
+                    String tmp = array[i];
+                    array[i] = array[i+1];
+                    array[i+1] = tmp;
+                    needIteration = true;
+                }
+            }
+        }
     }
+
 
     //Метод для сравнеия строк : "а" больше чем "б"
 
     public static boolean isGreaterThan(String a,String b){
 
-        return a.compareTo(b) >0;
+        return a.compareTo(b) >0; // вернет FALSE- если строки по аффавиту, и вернет TRUE умли не по алфавиту. Так  FF и ZZ вернет false
     }
 }

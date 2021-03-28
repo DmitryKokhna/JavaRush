@@ -37,9 +37,9 @@ public class Solution {
     }
 
     public static int getMinimum(List<Integer>  array){
-        int minumunFromList= Collections.min(array);
+        int minimumFromList= Collections.min(array);
 
-        return minumunFromList;
+        return minimumFromList;
     }
 
     public static List<Integer> getIntegerList() throws IOException {

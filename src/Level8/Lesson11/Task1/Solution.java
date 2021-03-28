@@ -60,12 +60,15 @@ public class Solution {
     public static void printCats(Set<Cat> cats) { //метод который выводит на консоль множество
         Iterator<Cat> iterator = cats.iterator();
         while (iterator.hasNext()) {
-            System.out.println(iterator.next());
+            System.out.println(iterator.next().toString());
         }
 
     }
     public static class Cat {
         public Cat() // конструктор пустой
         {}
+
     }
-}
+
+        }
+

@@ -50,8 +50,9 @@ public class Solution {
         Set<Object> pets = join(cats,dogs);
         printPets(pets);
 
-//        removeCats(pets,cats);
-//printPets(pets);
+        removeCats(pets,cats);
+        System.out.println("----------after -- remove -------");
+        printPets(pets);
 
     }
 
@@ -85,22 +86,30 @@ public class Solution {
     }
 
     public static Set<Object> join(Set<Cat> cats, Set<Dog> dogs){
+//                Set<Object> result=new HashSet<>();
+//        Iterator forCat= cats.iterator();
+//        Iterator forDog= dogs.iterator();
+//
+//        while (forCat.hasNext()){
+//            result.add(forCat.next());
+//        }
+//
+//        while (forDog.hasNext()){
+//            result.add(forDog.next());
+//        }
+//        return result;
+
+
+
 Set<Cat> catForJoin=createCats();
 Set<Dog> dogForJoin=createDogs();
-Set<Object> catsAndDogs = new HashSet<>(createCats());
+Set<Object> catsAndDogs = new HashSet<>(catForJoin);
 catsAndDogs.addAll(dogForJoin);
         return catsAndDogs;
             }
 
             public static void removeCats(Set<Object> pets,Set<Cat> cats){
-                Iterator<Object> objectIterator= pets.iterator();
-                Iterator<Cat> catIterator= cats.iterator();
-                while (objectIterator.hasNext()){
-                    boolean isCat=objectIterator.next().equals(catIterator.next());
-                    if(isCat==true){
-                        objectIterator.remove();
-                    }
-                }
+               pets.removeAll(cats);
             }
 
             public static void printPets(Set<Object> pets){

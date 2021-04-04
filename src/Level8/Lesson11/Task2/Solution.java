@@ -33,15 +33,6 @@ import java.util.Iterator;
 import java.util.Set;
 
 public class Solution {
-    public static class Cat{
-        public Cat() {
-        }
-    }
-    public static class Dog{
-        public Dog() {
-        }
-    }
-
 
     public static void main(String[] args) {
         Set<Cat> cats=createCats();
@@ -86,26 +77,25 @@ public class Solution {
     }
 
     public static Set<Object> join(Set<Cat> cats, Set<Dog> dogs){
-//                Set<Object> result=new HashSet<>();
-//        Iterator forCat= cats.iterator();
-//        Iterator forDog= dogs.iterator();
-//
-//        while (forCat.hasNext()){
-//            result.add(forCat.next());
-//        }
-//
-//        while (forDog.hasNext()){
-//            result.add(forDog.next());
-//        }
-//        return result;
+                Set<Object> result=new HashSet<>();
+        Iterator<Cat> forCat= cats.iterator();
+        Iterator<Dog> forDog= dogs.iterator();
 
+        while (forCat.hasNext()){
+            result.add(forCat.next());
+        }
 
+        while (forDog.hasNext()){
+            result.add(forDog.next());
+        }
+        return result;
 
-Set<Cat> catForJoin=createCats();
-Set<Dog> dogForJoin=createDogs();
-Set<Object> catsAndDogs = new HashSet<>(catForJoin);
-catsAndDogs.addAll(dogForJoin);
-        return catsAndDogs;
+// Не работает - чтобы потом удалить!!! Почему ХЗ
+//Set<Cat> catForJoin=createCats();
+//Set<Dog> dogForJoin=createDogs();
+//Set<Object> catsAndDogs = new HashSet<>(catForJoin);
+//catsAndDogs.addAll(dogForJoin);
+//        return catsAndDogs;
             }
 
             public static void removeCats(Set<Object> pets,Set<Cat> cats){
@@ -118,6 +108,9 @@ catsAndDogs.addAll(dogForJoin);
           System.out.println(objectIterator.next());
       }
             }
-            //my code
+    public static class Cat{}
+
+    public static class Dog{}
+
 
 }

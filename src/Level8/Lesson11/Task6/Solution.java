@@ -27,14 +27,60 @@ import java.util.ArrayList;
 public class Solution {
 
     public static void main(String[] args) {
-        //code
+
+        ArrayList<Human> childForChild = new ArrayList<>();
+        ArrayList<Human> childForParents = new ArrayList<>();
+        ArrayList<Human> childForGran1 = new ArrayList<>();
+        ArrayList<Human> childForGran2 = new ArrayList<>();
+
+        Human child1 = new Human("Ребенок_1", true, 10, childForChild);
+        Human child2 = new Human("Ребенок_2", false, 12, childForChild);
+        Human child3 = new Human("Ребенок_3", false, 14, childForChild);
+
+        childForParents.add(child1);
+        childForParents.add(child2);
+        childForParents.add(child3);
+
+        Human father = new Human("Отец", true, 40, childForParents);
+        Human mother = new Human("Мать", false, 35, childForParents);
+        childForGran1.add(father);
+        childForGran2.add(mother);
+
+
+        Human gF1 = new Human("Дед_1", true, 70, childForGran1);
+        Human gF2 = new Human("Дед_2", true, 71, childForGran2);
+
+        Human gM1 = new Human("Бабушка_1", false, 60, childForGran1);
+        Human gM2 = new Human("Бабушка_2", false, 61, childForGran2);
+
+        System.out.println(gF1.toString());
+        System.out.println(gM1);
+        System.out.println();
+        System.out.println(gF2);
+        System.out.println(gM2);
+        System.out.println();
+        System.out.println(father);
+        System.out.println(mother);
+        System.out.println();
+        System.out.println(child1);
+        System.out.println(child2);
+        System.out.println(child3);
+
     }
-    public static class Human{
-        //code
+
+    public static class Human {
+
         String name;
         boolean sex;
         int age;
         ArrayList<Human> children;
+
+        public Human(String name, boolean sex, int age, ArrayList<Human> children) {
+            this.name = name;
+            this.sex = sex;
+            this.age = age;
+            this.children = children;
+        }
 
         public String toString() {
             String text = "";
@@ -43,18 +89,18 @@ public class Solution {
             text += ", возраст: " + this.age;
 
             int childCount = this.children.size();
-            if(childCount > 0) {
+            if (childCount > 0) {
                 text += ", дети: " + this.children.get(0).name;
 
                 for (int i = 1; i < childCount; i++) {
                     Human child = this.children.get(i);
                     text += ", " + child.name;
-                }
+                              }
             }
-              return text;
-            }
-
+            return text;
         }
 
     }
+
+}
 

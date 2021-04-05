@@ -34,30 +34,23 @@ public class Solution {
 
     public static void main(String[] args) throws ParseException {
 
-        System.out.println(isDateOdd("JANUARY 1 2000"));
+        System.out.println(isDateOdd("JANUARY 2 2001"));
 
     }
 
-    public static boolean isDateOdd(String date) throws ParseException {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMMM d yyyy", Locale.ENGLISH);
-        Date dateInput = simpleDateFormat.parse(date);
-
-       // int year = dateInput.getYear();
-
-        Date dateStartYear = new Date();
-
-        dateStartYear.setDate(1);
-        dateStartYear.setMonth(Calendar.JANUARY);
-    //    dateStartYear.setYear(year);
-
-        long difDate = dateInput.getTime() - dateStartYear.getTime();
-
-        long day = difDate / (1000 * 3600 * 24);
-        if (day % 2 == 0) {
-            return false;
-        } else {
-            return true;
-        }
+    public static boolean isDateOdd(String date) {
+        Date date1 = new Date(date);
+        Date date2 = new Date(date);
+        date2.setDate(1);
+        date2.setMonth(0);
+        //Boolean res;
+        long time1 =  date1.getTime();
+        //System.out.println(time1);
+        long time2 =  date2.getTime();
+        //System.out.println(time2);
+        int res = (int) ((time1-time2)/(1000*60*60*24))+1;
+        //System.out.println(res+", "+res%2);
+        return (res%2!=0);
 
     }
 }

@@ -42,61 +42,60 @@ public class Solution {
     public static void main(String[] args) throws IOException {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        //     List<String> list = new ArrayList<>();
-        Map<String, String> map = new HashMap<>(); // Семья - ключ, Город - значение
+        //     List<String> list = new ArrayList<>();  - из стартового условия
+        Map<String, String> map = new HashMap<>(); // Семья - значение Город - ключ
 
-        System.out.println("---Введите любые символ \"Д\" для начала каждой записи или нажмите ввод для окончания ---");
+
         while (true) {
-
-
-            String family;
-            String city;
-            String start = reader.readLine();
-            if (!start.equals("Д")) {
+            String city = reader.readLine(); // вводим город
+            //делаем проверку да ввод годода, до проверки ввода фамилии
+            if (city.isEmpty()) {
                 break;
-            } else {
-            System.out.println("--- введите фамилию ---");
-                family = reader.readLine();
-                System.out.println("--- введите город ---");
-                city = reader.readLine();
             }
+            String family= reader.readLine(); // вводим фамилиюю
 
-            map.put(family, city);
 
-            // list.add(family);
+            map.put(city,family); //заполняем мапу
+
+
+            // list.add(family); - из стартового условия
         }
-        // проверка введенного
-        for (Map.Entry<String, String> mapIterator1 : map.entrySet()) {
-            String cityFromMap = mapIterator1.getValue();
-            String familyFroomMap = mapIterator1.getKey();
-            System.out.println("Семья " + familyFroomMap + " живет в " + cityFromMap);
-        }
-            // read the house number
-        int countSearch=0;
-            System.out.println("___Введите город для поиска___");
 
-            String cityForSearch = reader.readLine();
+        // проверка введенного - по заданию не трубуется, но делаем для себя
+//        for (Map.Entry<String, String> mapIterator1 : map.entrySet()) {
+//         String city=mapIterator1.getKey();
+//         String family=mapIterator1.getValue();
+//            System.out.println("Семья " + family + " живет в " + city );
+//        }
 
-            //  int houseNumber = Integer.parseInt(reader.readLine());
+            // read the house number - чисто для проверки что ничего не нашло
+//        int countSearch=0;
+    //    System.out.println("___Введите город для поиска___");  //- по заданию  не трубудется
+//
+        // вводим грод для поиска
+          String cityForSearch = reader.readLine();
 
-//        if(0<=houseNumber && houseNumber < list.size()){
-//            String familyName = list.get(houseNumber);
-//            System.out.println(familyName);
+            //  int houseNumber = Integer.parseInt(reader.readLine()); -  - из стартового условия
 
+//        if(0<=houseNumber && houseNumber < list.size()){  //- из стартового условия
+//            String familyName = list.get(houseNumber); //- из стартового условия
+//            System.out.println(familyName); //- из стартового условия
+
+        //проходм мапу
             for (Map.Entry<String, String> mapIterator2 : map.entrySet()) {
 
-                String valueCity = mapIterator2.getValue();
-
-                if (cityForSearch.equals(valueCity)) {
-                    System.out.println("В городе "+cityForSearch+" живет семья - " + mapIterator2.getKey());
-                  countSearch=countSearch+1;
+                String keyCity = mapIterator2.getKey();
+//сравниваем полученное значение города из мапы с введенным
+                if (keyCity.equals(cityForSearch)) {
+                    System.out.println(mapIterator2.getValue());
+            //      countSearch=countSearch+1;
                 }
             }
-        if (map.size()==0 ) {
-            System.out.println("не заполнено");
-        } else if(countSearch==0){
-            System.out.println("не найдено");
-        }
+//        if (map.size()==0 ) {
+//            System.out.println("не заполнено");
+//        } else if(countSearch==0){
+//            System.out.println("не найдено");
+//        }
 
     }
 

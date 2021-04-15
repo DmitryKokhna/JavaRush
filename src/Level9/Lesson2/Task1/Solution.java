@@ -1,6 +1,6 @@
-package Level9.Lesson2;
+package Level9.Lesson2.Task1;
 //Задача 1
-
+//Уровень - EASY
 //Возвращаем StackTrace
 
 //Принцип стека несправедлив и суров. Но иногда так полезен!

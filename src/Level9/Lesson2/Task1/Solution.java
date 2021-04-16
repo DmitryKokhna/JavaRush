@@ -22,8 +22,7 @@ import jdk.jfr.StackTrace;
 public class Solution {
     public static void main(String[] args) {
         method1();
-
-    }
+           }
 
     public static StackTraceElement[] method1() {
         method2();
@@ -49,8 +48,8 @@ public class Solution {
     public static StackTraceElement[] method4() {
         method5();
         //напишите тут ваш код
-        StackTraceElement[] stackTraceElements =Thread.currentThread().getStackTrace();
-        return stackTraceElements;
+        StackTraceElement[] stackTraceElements1 =Thread.currentThread().getStackTrace();
+        return stackTraceElements1;
     }
 
     public static StackTraceElement[] method5() {

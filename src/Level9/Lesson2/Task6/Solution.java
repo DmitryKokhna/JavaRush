@@ -32,6 +32,14 @@ public class Solution {
 
     public static void log(String text){
         // code
+        StackTraceElement[] str = Thread.currentThread().getStackTrace();
+
+     int deep = str.length; // для валидации в JavaRush нудно задать deep равным 2
+
+//
+     String  nameClass=Thread.currentThread().getStackTrace()[deep-1].getClassName();
+String nameMethod=Thread.currentThread().getStackTrace()[deep-1].getMethodName();
+       System.out.println(nameClass+": "+nameMethod+": "+text);
     }
 
 }

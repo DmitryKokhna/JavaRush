@@ -22,7 +22,14 @@ import java.net.URISyntaxException;
 public class Solution {
     public static void main(String[] args) throws Exception {
         //code
-        method1();
+        try {
+            method1();
+        }
+        catch (NullPointerException nullPointerException){} // если CATCH пустой, то фигурные скобки нужны все одно
+        //    System.out.println(nullPointerException);
+
+        catch (FileNotFoundException fileNotFoundException){}
+        //    System.out.println(fileNotFoundException);
 
     }
 

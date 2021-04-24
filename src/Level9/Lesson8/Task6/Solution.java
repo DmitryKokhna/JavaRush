@@ -23,19 +23,22 @@ package Level9.Lesson8.Task6;
 //Два класса из четырех должны быть checked исключениями.
 //Два класса из четырех должны быть unchecked исключениями.
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public class Solution {
     public static void main(String[] args)  {
-
-        class MyException  {
+//checked исключения
+        class MyException extends IOException {
         }
 
-        class MyException2 {
+        class MyException2 extends FileNotFoundException {
+        }
+        // unchecked исключения
+        class MyException3 extends ArithmeticException {
         }
 
-        class MyException3 {
-        }
-
-        class MyException4  {
+        class MyException4 extends IndexOutOfBoundsException {
         }
 
     }

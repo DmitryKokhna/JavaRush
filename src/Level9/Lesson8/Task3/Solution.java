@@ -39,14 +39,35 @@ import java.nio.file.FileSystemException;
 public class Solution {
     public static StatelessBean BEAN = new StatelessBean();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, FileSystemException {
+try {
+    handleExceptions();
+}
+//тут ловим исключение FileSystemException , которые бросили дальне из метода handleExceptions
+catch (FileSystemException ff){
+    BEAN.log(ff);
 
-        handleExceptions();
+}
     }
 
-    public static void handleExceptions() {
+    public static void handleExceptions() throws FileSystemException, IOException {
 
-        BEAN.methodThrowExceptions();
+try {
+    BEAN.methodThrowExceptions();
+}
+// ловим исключение FileSystemException  для лога (т.е. вывода информации о нем), после чего бросаем через throw
+catch (FileSystemException f){
+    BEAN.log(f);
+    throw f;
+}
+
+catch (CharConversionException cc){
+    BEAN.log(cc);
+}
+catch (IOException ioe){
+    BEAN.log(ioe);
+}
+
     }
 
     public static class StatelessBean {

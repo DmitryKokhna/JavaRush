@@ -29,19 +29,19 @@ import java.util.Set;
 
 public class Solution {
     public static void main(String[] args) {
-        Map<String, Cat> map = createMap();
-        Set<Cat> set = convertMapToSet(map);
-        printCatSet(set);
+//        Map<String, Cat> map = createMap();
+//        Set<Cat> set = convertMapToSet(map);
+//        printCatSet(set);
     }
 
-    public static Map<String, Cat> createMap() {
+//    public static Map<String, Cat> createMap() {
+//
+//        //напишите тут ваш код
+//    }
 
-        //напишите тут ваш код
-    }
-
-    public static Set<Cat> convertMapToSet(Map<String, Cat> map) {
-
-    }
+//    public static Set<Cat> convertMapToSet(Map<String, Cat> map) {
+//
+//    }
 
     public static void printCatSet(Set<Cat> set) {
         for (Cat cat : set) {

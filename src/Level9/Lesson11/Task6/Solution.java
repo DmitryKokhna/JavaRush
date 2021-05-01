@@ -34,7 +34,11 @@ public class Solution {
     public static Wolf wolf = new Wolf();
 
     public static void main(String[] args) {
-
+wolf.ate.add(grandmother);
+wolf.ate.add(hood);
+woodman.killed.add(wolf);
+//wolf.ate.remove(grandmother); // для решения не требуется
+//wolf.ate.remove(hood); // для решения не требуется
     }
 
     // Красная шапочка

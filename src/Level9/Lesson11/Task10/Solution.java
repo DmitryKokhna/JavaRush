@@ -29,12 +29,13 @@ public class Solution {
         String sourceFileName = reader.readLine();
         String destinationFileName = reader.readLine();
 
-        InputStream fileInputStream = getInputStream(sourceFileName);
-        OutputStream fileOutputStream = getOutputStream(destinationFileName);
+        InputStream fileInputStream = getInputStream(sourceFileName); // тут в () был "destinationFileName" , а нужно "sourceFileName";
+        OutputStream fileOutputStream = getOutputStream(destinationFileName); // тут был   InputStream, а нужно OutputStream
 
         int count = 0;
 
-        while(fileInputStream.available()>0){
+        while(fileInputStream.available()>0) // тут была ";" которая мешала
+        {
 int data = fileInputStream.read();
             fileOutputStream.write(data);
             count++;

@@ -13,7 +13,8 @@ package Level9.Lesson11.Task12;
 
 //Задача: Программа вводит два имени файла. И копирует первый файл на место, заданное вторым именем.
 //Новая задача: Программа вводит два имени файла. И копирует первый файл на место, заданное вторым именем.
-//Если файла (который нужно копировать) с указанным именем не существует, то программа должна вывести надпись "Файл не существует." и еще один раз прочитать имя файла с консоли, а уже потом считывать файл для записи.
+//Если файла (который нужно копировать) с указанным именем не существует, то программа должна вывести надпись "Файл не существует."
+// и еще один раз прочитать имя файла с консоли, а уже потом считывать файл для записи.
 //
 //Требования:
 //Программа должна считывать имена файлов.
@@ -29,21 +30,41 @@ import java.io.*;
 public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int count = 1;
 
-        String sourceFileName = reader.readLine();
-        String destinationFileName = reader.readLine();
+            String sourceFileName=null;
+            String destinationFileName = null;
 
+            InputStream fileInputStream = null;
 
-            InputStream fileInputStream = getInputStream(sourceFileName);
+                while (count <= 2) {
+
+            try {
+                sourceFileName = reader.readLine();
+                destinationFileName = reader.readLine();
+                fileInputStream = getInputStream(sourceFileName);
+                count++;
+
+            } catch (FileNotFoundException fnfe) {
+                System.out.println("Файл не существует.");
+                sourceFileName = reader.readLine();
+                fileInputStream = getInputStream(sourceFileName);
+                count++;
+if(count>2){
+    break;
+}
+            }
             OutputStream fileOutputStream = getOutputStream(destinationFileName);
 
-        while (fileInputStream.available()>0) {
-            int data = fileInputStream.read();
-            fileOutputStream.write(data);
-        }
 
-        fileInputStream.close();
-        fileOutputStream.close();
+            while (fileInputStream.available() > 0) {
+                int data = fileInputStream.read();
+                fileOutputStream.write(data);
+            }
+
+            fileInputStream.close();
+            fileOutputStream.close();
+        }
     }
 
     public static InputStream getInputStream(String fileName) throws IOException {

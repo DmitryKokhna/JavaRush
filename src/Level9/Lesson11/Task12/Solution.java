@@ -25,47 +25,48 @@ package Level9.Lesson11.Task12;
 //В методе main должен вызываться метод getOutputStream.
 //Метод getOutputStream изменять нельзя.
 
+//!!!!! КРИВОЕ ЗАДАНИЕ
+//ШАГИ
+//1.Запустить ввод имени Первого файла
+//2. Обработать Первый файл через ВходнойПоток
+//3.Если введенного имени  Первогофайла не существует то.
+//4. Еще раз запустить ввод имени Первого файла.
+//5. Обработать имя Первого через ВходнойПоток.
+//6. ТОЛЬКО ЗАТЕМ - запустить ввод имени Второго файла.
+//7. Обработать Второй файл через ВыходнойПоток
+//8. Дальше обычное копирование из кода, который дан изначально.
+
 import java.io.*;
 
 public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int count = 1;
 
-            String sourceFileName=null;
-            String destinationFileName = null;
+        String sourceFileName = reader.readLine();
+        InputStream fileInputStream;
 
-            InputStream fileInputStream = null;
+        try {
+            fileInputStream = getInputStream(sourceFileName);
 
-                while (count <= 2) {
-
-            try {
-                sourceFileName = reader.readLine();
-                destinationFileName = reader.readLine();
-                fileInputStream = getInputStream(sourceFileName);
-                count++;
-
-            } catch (FileNotFoundException fnfe) {
-                System.out.println("Файл не существует.");
-                sourceFileName = reader.readLine();
-                fileInputStream = getInputStream(sourceFileName);
-                count++;
-if(count>2){
-    break;
-}
-            }
-            OutputStream fileOutputStream = getOutputStream(destinationFileName);
-
-
-            while (fileInputStream.available() > 0) {
-                int data = fileInputStream.read();
-                fileOutputStream.write(data);
-            }
-
-            fileInputStream.close();
-            fileOutputStream.close();
+        } catch (FileNotFoundException fnfe) {
+            System.out.println("Файл не существует.");
+            sourceFileName = reader.readLine();
+            fileInputStream = getInputStream(sourceFileName);
         }
+        String destinationFileName = reader.readLine();
+        OutputStream fileOutputStream = getOutputStream(destinationFileName);
+
+
+        while (fileInputStream.available() > 0) {
+            int data = fileInputStream.read();
+            fileOutputStream.write(data);
+        }
+
+        fileInputStream.close();
+        fileOutputStream.close();
     }
+
+
 
     public static InputStream getInputStream(String fileName) throws IOException {
         return new FileInputStream(fileName);

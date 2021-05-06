@@ -47,11 +47,11 @@ public class Solution {
         ArrayList<Character> vowels = new ArrayList<>();
         ArrayList<Character> noVowels = new ArrayList<>();
         for (int i=0;i< arrChar.length;i++){
-          if(isVowel(arrChar[i]) && !Character.isWhitespace(arrChar[i]))
+          if(isVowel(arrChar[i]) && !Character.isWhitespace(arrChar[i])) // проверяем, принадлежит ли буква к гласным и не является ли пробелом
             {
               vowels.add(arrChar[i]) ;
             }
-          else if(!isVowel(arrChar[i]) && !Character.isWhitespace(arrChar[i])) {
+          else if(!isVowel(arrChar[i]) && !Character.isWhitespace(arrChar[i])) { // проверяем, принадлежит ли буква к согласным и не является ли пробелом
               noVowels.add(arrChar[i]);
           }
 

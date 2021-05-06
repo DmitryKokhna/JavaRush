@@ -1,5 +1,5 @@
 package Level9.Lesson11.Task13;
-
+// НЕ САМ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //Задача 13
 
 //Задача по алгоритмам Ӏ Java Syntax: 9 уровень, 11 лекция
@@ -14,6 +14,14 @@ package Level9.Lesson11.Task13;
 
 /*Задача: Пользователь вводит с клавиатуры список слов (и чисел).
 Слова вывести в возрастающем порядке, числа - в убывающем.
+//Требования:
+//    Программа должна считывать данные с клавиатуры.
+//    Программа должна выводить данные на экран.
+//    Выведенные слова должны быть упорядочены по возрастанию (используй готовый метод isGreaterThan).
+//    Выведенные числа должны быть упорядочены по убыванию.
+//    Метод main должен использовать метод sort.
+//    Метод sort должен использовать метод isGreaterThan.
+//    Метод sort должен использовать метод isNumber.
 Пример ввода:
 Вишня
 1
@@ -34,23 +42,23 @@ package Level9.Lesson11.Task13;
 Яблоко
 */
 
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Solution {
     public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         ArrayList<String> list = new ArrayList<>();
-        String line= reader.readLine();
-
-      while (!line.isEmpty()){
-          list.add(line);
-          line = reader.readLine();
+        while (true) {
+            String s = reader.readLine();
+            if (s == null || s.isEmpty()) {
+                break;
+            }
+            list.add(s);
         }
-
         String[] array = list.toArray(new String[0]);
         sort(array);
         for (String x : array) {
@@ -58,36 +66,43 @@ public class Solution {
         }
     }
     public static void sort(String[] array) {
-  //code
+        List<Integer> numbers = new ArrayList<>();
+        List<String> strings = new ArrayList<>();
+        for (String s : array) {
+            if (isNumber(s))
+                numbers.add(Integer.parseInt(s));
+            else
+                strings.add(s);
+        }
+        Collections.sort(numbers, Collections.<Integer>reverseOrder());
+        Collections.sort(strings);
+        isGreaterThan("", "_");
+        int numberCount = 0;
+        int stringCount = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (isNumber(array[i])) {
+                array[i] = numbers.get(numberCount) + "";
+                numberCount++;
+            } else {
+                array[i] = strings.get(stringCount);
+                stringCount++;
+            }
+        }
     }
-
-    //метод для сравнения строк: "а" больше чем "b"
     public static boolean isGreaterThan(String a, String b) {
         return a.compareTo(b) > 0;
     }
-
-    //переданая строка - это число?
-    public static boolean isNumber(String text) {
-        if (text.length() == 0) {
+    public static boolean isNumber(String s) {
+        if (s.length() == 0) {
             return false;
         }
-        char[] chars = text.toCharArray();
+        char[] chars = s.toCharArray();
         for (int i = 0; i < chars.length; i++) {
-            char character = chars[i];
-
-            // Строка содержит '-' внутри строки
-            if (i != 0 && character == '-') {
-                return false;
-            }
-            //не цифра и не начинается с "-"
-            if (!Character.isDigit(character) && character != '-')
+            char c = chars[i];
+            if ((i != 0 && c == '-') // Строка содержит '-'
+                    || (!Character.isDigit(c) && c != '-') // или не цифра и не начинается с '-'
+                    || (chars.length == 1 && c == '-')) // или одиночный '-'
             {
-                return false;
-            }
-
-            //одиночный "-"
-             if(chars.length == 1 && character == '-')
-                      {
                 return false;
             }
         }

@@ -32,19 +32,48 @@ package Level9.Lesson11.Task5;
 //Каждая строка должна заканчиваться пробелом
 
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
 public class Solution {
     public static char[] vowels = new char[]{'а', 'я', 'у', 'ю', 'и', 'ы', 'э', 'е', 'о', 'ё'};
 
     public static void main(String[] args) throws Exception {
+        BufferedReader reader= new BufferedReader(new InputStreamReader(System.in));
+        String str= reader.readLine();
+        char[] arrChar=str.toCharArray();
 
+        ArrayList<Character> vowels = new ArrayList<>();
+        ArrayList<Character> noVowels = new ArrayList<>();
+        for (int i=0;i< arrChar.length;i++){
+          if(isVowel(arrChar[i]) && !Character.isWhitespace(arrChar[i]))
+            {
+              vowels.add(arrChar[i]) ;
+            }
+          else if(!isVowel(arrChar[i]) && !Character.isWhitespace(arrChar[i])) {
+              noVowels.add(arrChar[i]);
+          }
+
+        }
         //напишите тут ваш код
+        for (Character ch1: vowels
+             ) {
+            System.out.print(ch1+" ");
+        }
+
+        System.out.println("");
+        for (Character ch2: noVowels
+             ) {
+            System.out.print(ch2+" ");
+        }
     }
 
     // метод проверяет, гласная ли буква
-    public static boolean isVowel(char c) {
-        c = Character.toLowerCase(c);  // приводим символ в нижний регистр - от заглавных к строчным буквам
-        for (char d : vowels) {  // ищем среди массива гласных
-            if (c == d) {
+    public static boolean isVowel(char character) {
+        character = Character.toLowerCase(character);  // приводим символ в нижний регистр - от заглавных к строчным буквам
+        for (char vowel : vowels) {  // ищем среди массива гласных
+            if (character == vowel) {
                 return true;
             }
         }

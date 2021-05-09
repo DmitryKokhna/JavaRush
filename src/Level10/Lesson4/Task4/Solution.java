@@ -21,8 +21,6 @@ public class Solution {
     public static void main(String[] args) {
         short number = 9;
         char zero = '0';
-        int x = 0;
-        System.out.println( zero+" zero");
         int nine = (zero + number);
         System.out.println((char)(nine)); // переобразуем в CHAR, т.к. "57" в переводя в CHAR это символ "9"
     }

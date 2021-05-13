@@ -51,6 +51,7 @@ public class Solution {
         try{
           el=  list.get(index);
         }
+
         catch (Exception e){
             el=defaultValue;
         }

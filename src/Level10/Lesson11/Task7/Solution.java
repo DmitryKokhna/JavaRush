@@ -19,7 +19,7 @@ package Level10.Lesson11.Task7;
 //6.Метод getA не изменять.
 
 public class Solution {
-    public static int A = 5; // добавили сюда STATIC
+    public static int A = 5; // добавили сюда STATIC, но можно и убрать
     public static int B = 5; // добавили сюда STATIC
     public static int C = 5; // добавили сюда STATIC
     public static int D = 5;

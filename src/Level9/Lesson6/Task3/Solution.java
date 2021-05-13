@@ -21,7 +21,7 @@ package Level9.Lesson6.Task3;
 //Выведенное сообщение должно содержать тип возникшего исключения.
 //Имеющийся код в методе main не удалять.
 
-import com.google.inject.OutOfScopeException;
+
 
 public class Solution {
     public static void main(String[] args) {

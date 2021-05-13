@@ -47,6 +47,13 @@ public class Solution {
 
     public  static int safeGetElement (ArrayList<Integer> list, int index,int defaultValue){
         // code
-
+        int el=0;//вводим переменную, которую будеи возвращать
+        try{
+          el=  list.get(index);
+        }
+        catch (Exception e){
+            el=defaultValue;
+        }
+return el;
     }
 }

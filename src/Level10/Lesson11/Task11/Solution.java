@@ -31,7 +31,7 @@ public class Solution {
 
     public Solution() {
         this.map = new HashMap<Integer, String>(); // тут меняем "int" на "Integer"
-   //     map.put(index, name); // тут нужно закоментить строку или ее убрать, т.к. конструктор при создании Мап поместить туда NULL
+  // map.put(index, name); // тут нужно закоментить строку или ее убрать, т.к. конструктор при создании Мап поместить туда NULL
     }
     public static void main(String[] args) throws IOException {
         Solution solution = new Solution();
@@ -41,14 +41,15 @@ public class Solution {
             int index = Integer.parseInt(reader.readLine());
             String name = reader.readLine();
             solution.map.put(index, name);
+
         }
-        int x=0;
         for (Map.Entry<Integer, String> pair : solution.map.entrySet()) {   // тут меняем "int" на "Integer"
             index = pair.getKey();
             name = pair.getValue();
             System.out.println("Id=" + index + " Name=" + name);
           }
 
+      System.out.println(solution.map.size()+" это размерность Мап через ++"); // добавлена самостоятельно для проверки размерности  МАП
 
     }
     }

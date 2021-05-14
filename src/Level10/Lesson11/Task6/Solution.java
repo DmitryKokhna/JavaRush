@@ -60,7 +60,7 @@ private ArrayList<Integer> arrayList;
             this.c = c;
             this.d = d;
         }
-//5
+//6
         public Human(int a, String b, boolean c, char d, int[] arr) {
             this.a = a;
             this.b = b;
@@ -68,7 +68,7 @@ private ArrayList<Integer> arrayList;
             this.d = d;
             this.arr = arr;
         }
-//6
+//7
         public Human(int a, String b, boolean c, char d, int[] arr, ArrayList<Integer> arrayList) {
             this.a = a;
             this.b = b;
@@ -77,23 +77,19 @@ private ArrayList<Integer> arrayList;
             this.arr = arr;
             this.arrayList = arrayList;
         }
-//7
+//8
         public Human(ArrayList<Integer> arrayList) {
             this.arrayList = arrayList;
         }
-//8
+//9
         public Human(int[] arr) {
             this.arr = arr;
         }
-//9
+//10
         public Human(char d) {
             this.d = d;
         }
 
-//10
-public Human(boolean c) {
-    this.c = c;
-}
         //code
     }
 }

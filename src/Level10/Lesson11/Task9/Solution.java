@@ -53,11 +53,6 @@ public class Solution {
         HashMap<String, Integer> result = new HashMap<String, Integer>();
 
         //Напишите тут ваш код
-        for (String word: list) {
-            result.put(word    , result.containsKey(word) ? result.get(word) + 1: 1);
-        }
-        // what's written here makes me lose my mind.
-
-        return result;
+            return result;
     }
 }

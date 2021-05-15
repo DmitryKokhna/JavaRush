@@ -1,5 +1,5 @@
 package Level10.Lesson11.Task9;
-
+///РЕШИЛ НЕ САМ
 //Задача 9
 //Одинаковые слова в списке
 
@@ -35,7 +35,7 @@ public class Solution {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         ArrayList<String> words = new ArrayList<String>();
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 6; i++)
         {
             words.add(reader.readLine());
         }
@@ -50,21 +50,14 @@ public class Solution {
 
     public static Map<String, Integer> countWords(ArrayList<String> list)
     {
+
+
+
         HashMap<String, Integer> result = new HashMap<String, Integer>();
-        String s1=null;
-        Integer count=0;
+        for (String word: list) {
+            result.put(word    , result.containsKey(word) ? result.get(word) + 1: 1);
+        }
 
-
-//        while (!list.isEmpty()){
-//            s1= list.get(0);
-//            for (String s2: list) {
-//                if(s1.equals(s2)){
-//                    count++;
-//                    list.remove(s2);
-//                                  }
-//                result.put(s1,count);
-//                list.remove(list.get(1));
-//            }
         return result;
         }
 

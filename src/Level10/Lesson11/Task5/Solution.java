@@ -77,7 +77,7 @@ Integer letterCount=0;
             }
 
         }
-      //  Map<Character, Integer> sortedMap = new TreeMap<>(countMap);
+
         for (Map.Entry<Character, Integer> pair : countMap.entrySet()
              ) {
             System.out.println( pair.getKey()+ " "+pair.getValue() );

@@ -46,11 +46,11 @@ public class Solution {
         // Ввод строк
         ArrayList<String> list = new ArrayList<String>();
 
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 10; i++) {
             String s = reader.readLine();
             list.add(s.toLowerCase());
         }
-        Map<Character, Integer> countMap=new HashMap<>();
+        LinkedHashMap<Character, Integer> countMap=new LinkedHashMap<>(); // тут создаем именно LinkedHashMap т.е. буква "Ё" иначе будет идти после "Я"
         for (int i=0;i<alphabet.size();i++){
             countMap.put(alphabet.get(i),0);
         }
@@ -62,14 +62,14 @@ Integer letterCount=0;
 
             for (Character ch: alphabet
                  ) {
-                for (int j=0;j<charsArr.length;j++){
+                for (int j=0;j<charsArr.length;j++)
+                {
                     char bukva=charsArr[j];
-                    if (ch.equals(bukva)){
+                    if (ch.equals(bukva))
+                    {
                       letterCount=countMap.get(bukva);
                         letterCount=letterCount+1;
                         countMap.put(bukva,letterCount);
-
-
                     }
 
                 }
@@ -77,8 +77,8 @@ Integer letterCount=0;
             }
 
         }
-        Map<Character, Integer> sortedMap = new TreeMap<>(countMap);
-        for (Map.Entry<Character, Integer> pair : sortedMap.entrySet()
+      //  Map<Character, Integer> sortedMap = new TreeMap<>(countMap);
+        for (Map.Entry<Character, Integer> pair : countMap.entrySet()
              ) {
             System.out.println( pair.getKey()+ " "+pair.getValue() );
         }

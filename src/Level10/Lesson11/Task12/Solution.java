@@ -43,14 +43,41 @@ package Level10.Lesson11.Task12;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Solution {
+
+
     public static void main(String[] args) throws IOException {
+
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-         int id = Integer.parseInt(reader.readLine());
+        HashMap<String, String> map = new HashMap<>();
+        ArrayList<HashMap<Integer, String>> arrayList = new ArrayList<>();
+        while(true) {
+            String idAsString= reader.readLine();
+            if (idAsString.isEmpty()){
+                break;
+            }
+           int id = Integer.parseInt(idAsString);
 
-         String name = reader.readLine();
+            String name = reader.readLine();
+            HashMap<String, String> map2 = new HashMap<>();
+           map2.put(idAsString,name);
+       //     map2.put(id, name);
+//arrayList.add(map2);
 
-        System.out.println("Id="+ id + " Name="+name);
+
+        }
+
+        for (int i=arrayList.size()-1;i>=0;i--){
+            System.out.println(arrayList.get(i));
+        }
+//        for (Map.Entry<Integer, String> map2: map.entrySet()) {
+//            System.out.println("Id="+ map2.getKey() + " Name="+map2.getValue());
+//        }
+
     }
 }

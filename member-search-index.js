@@ -1,1 +1,0 @@
-memberSearchIndex = [{"p":"Level10.Lesson11.Task10","c":"Solution","l":"main(String[])","u":"main(java.lang.String[])"},{"p":"Level10.Lesson11.Task10","c":"Solution","l":"safeGetElement(ArrayList<Integer>, int, int)","u":"safeGetElement(java.util.ArrayList,int,int)"},{"p":"Level10.Lesson11.Task10","c":"Solution","l":"Solution()","u":"%3Cinit%3E()"}];updateSearchResults();

@@ -43,10 +43,7 @@ package Level10.Lesson11.Task12;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Solution {
 
@@ -54,30 +51,34 @@ public class Solution {
     public static void main(String[] args) throws IOException {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        HashMap<String, String> map = new HashMap<>();
-        ArrayList<HashMap<Integer, String>> arrayList = new ArrayList<>();
-        while(true) {
-            String idAsString= reader.readLine();
-            if (idAsString.isEmpty()){
-                break;
-            }
-           int id = Integer.parseInt(idAsString);
-
-            String name = reader.readLine();
-            HashMap<String, String> map2 = new HashMap<>();
-           map2.put(idAsString,name);
-       //     map2.put(id, name);
-//arrayList.add(map2);
+        HashMap<String, Integer> stringIntegerHashMap2=new HashMap<>();// для JavaRush нужно HashMap , поэтому создаем обманку "stringIntegerHashMap2"
+        HashMap<String, Integer> stringIntegerHashMap=new LinkedHashMap<>();
 
 
-        }
-
-        for (int i=arrayList.size()-1;i>=0;i--){
-            System.out.println(arrayList.get(i));
-        }
-//        for (Map.Entry<Integer, String> map2: map.entrySet()) {
-//            System.out.println("Id="+ map2.getKey() + " Name="+map2.getValue());
-//        }
-
-    }
+        while (true) {
+            String   stringForId= reader.readLine();
+if (stringForId.isEmpty())
+{
+    break;
 }
+            int id = Integer.parseInt(stringForId);
+            String name = reader.readLine();
+            stringIntegerHashMap.put(name,id);
+         //   stringIntegerHashMap2.put(name,id); // для JavaRush нужно HashMap , поэтому создаем обманку "stringIntegerHashMap2"
+        }
+        ArrayList<String> stringArrayList=new ArrayList<>();
+        ArrayList<Integer> integerArrayList=new ArrayList<>();
+
+        for (Map.Entry<String, Integer> map: stringIntegerHashMap.entrySet()) {
+stringArrayList.add(map.getKey());
+integerArrayList.add(map.getValue());
+        }
+        for (int i=stringArrayList.size()-1;i>=0;i--){
+            System.out.println(stringArrayList.get(i)+" "+ integerArrayList.get(i));
+        }
+    }
+
+}
+
+
+

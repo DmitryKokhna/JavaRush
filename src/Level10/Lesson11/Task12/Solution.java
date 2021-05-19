@@ -45,15 +45,25 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
+/**
+ * @author KDA
+ * @version 1.1
+ */
 public class Solution {
 
 
     public static void main(String[] args) throws IOException {
-
+/**
+ * @Тут создали обманку для JR - т.к. он требует только HashMap
+ * @Но ремешение проще с  LinkedHashMap - для инвертирования в дальнейшем
+ */
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         HashMap<String, Integer> stringIntegerHashMap2=new HashMap<>();// для JavaRush нужно HashMap , поэтому создаем обманку "stringIntegerHashMap2"
         HashMap<String, Integer> stringIntegerHashMap=new LinkedHashMap<>();
 
+        /**
+         * @Проверка на ввод
+         */
 
         while (true) {
             String   stringForId= reader.readLine();
@@ -66,13 +76,23 @@ if (stringForId.isEmpty())
             stringIntegerHashMap.put(name,id);
          //   stringIntegerHashMap2.put(name,id); // для JavaRush нужно HashMap , поэтому создаем обманку "stringIntegerHashMap2"
         }
+        /**
+         * @Создаем 2 Списка, куда потом положим Строки и Integer
+         * @делаем так, чтобы сделать "псевдо-инверсию" HashMap
+         */
         ArrayList<String> stringArrayList=new ArrayList<>();
         ArrayList<Integer> integerArrayList=new ArrayList<>();
 
+        /**
+         * @используя foreach ложим в каждый список значения из МАП
+         */
         for (Map.Entry<String, Integer> map: stringIntegerHashMap.entrySet()) {
 stringArrayList.add(map.getKey());
 integerArrayList.add(map.getValue());
         }
+        /**
+         * @Выводим согласно условия
+         */
         for (int i=stringArrayList.size()-1;i>=0;i--){
             System.out.println(stringArrayList.get(i)+" "+ integerArrayList.get(i));
         }

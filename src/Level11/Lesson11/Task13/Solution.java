@@ -36,12 +36,24 @@ public class Solution {
         if (inputArray == null || inputArray.length == 0) {
             return new Pair<Integer, Integer>(null, null);
         }
+        int bufMax=inputArray[0];
+        int bufMin=inputArray[0];
 
-        // напишите тут ваш код
+        for (int i=1;i<inputArray.length;i++){
+            //проверка на Макс
+            if(inputArray[i]>bufMax){
+                bufMax=inputArray[i];
+            }
+            //проверка на Мин
+            if(inputArray[i]<bufMin){
+                bufMin=inputArray[i];
+            }
+                }
 
+        int x=bufMin;
+        int y = bufMax;
 
-
-        return new Pair<Integer, Integer>(0, 0);
+        return new Pair<Integer, Integer>(x, y);
     }
 
     public static class Pair<X, Y> {

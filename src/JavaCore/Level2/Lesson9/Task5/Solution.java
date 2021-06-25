@@ -22,6 +22,21 @@ public class Solution {
     public static void main(String[] args) {
 
     }
+    public interface CanRum{
+        public void run();
+    }
+    public interface CanSwim{
+        public void swim();
+    }
+
+    public abstract class Human implements CanRum,CanSwim {// объявляем класс Абстрактным
+        @Override
+        public abstract void run();// объякляем метод Абстрактым
+
+        @Override
+        public abstract void swim(); // объякляем метод Абстрактым
+    }
+
 
     //code
 }

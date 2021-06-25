@@ -54,17 +54,17 @@ public class Solution {
         @Override
         public void move()
         {
-            System.out.println("moveDug");
+            System.out.println("moveDuck");
         }
         @Override
         public void eat()
         {
-            System.out.println("eatDug");
+            System.out.println("eatDuck");
         }
         @Override
         public void fly()
         {
-            System.out.println("flyDug");
+            System.out.println("flyDuck");
         }
     }
 

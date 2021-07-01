@@ -30,11 +30,7 @@ public class Solution {
     }
 
     public abstract class Human implements CanRum,CanSwim {// объявляем класс Абстрактным
-        @Override
-        public abstract void run();// объякляем метод Абстрактым
 
-        @Override
-        public abstract void swim(); // объякляем метод Абстрактым
     }
 
 

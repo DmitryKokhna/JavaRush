@@ -18,7 +18,7 @@ public class Calcutator {
     {
         return a-b;
     }
-    public static int multyply(int a, int b) // усножение
+    public static int multyply(int a, int b) // умножение
     {
         return a*b;
     }
